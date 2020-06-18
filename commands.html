@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-168773853-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-168773853-1");
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>QR It Commands</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.glitch.com/1b27de60-fcea-46be-8e8f-b9e02c018d2e%2Ffavicon.ico?v=1591023169143"
+    />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Website for the Discord bot QR It" />
+    <meta
+      name="keywords"
+      content="bot, discord, chatbot, QRCode, QR, code, shorten, link, url, chat"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=0.63" />
+    <meta name="author" content="CedarBlocks" />
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="https://qrit.glitch.me">Home</a>
+      <a href="commands.html" class="active">Commands</a>
+      <a href="https://discord.gg/2YQ2ydr" target="_blank">Support</a>
+      <a
+        href="https://discordapp.com/oauth2/authorize?client_id=702935974308741140&scope=bot&permissions=52289"
+        target="_blank"
+        >Invite</a
+      >
+      <a href="livechat.html">Live Chat</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+    <h1 id="title">QR It Commands</h1>
+    <div id="main">
+      <br />
+      <table id="commands" align="center">
+        <tbody>
+          <tr>
+            <th>Command</th>
+            <th>Output</th>
+            <th>Permison</th>
+          </tr>
+          <tr>
+            <td>qrcode [link]</td>
+            <td>generates a qr code</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrdecode [Attach/upload QR code]</td>
+            <td>decodes the uploaded QR code, Must be PNG, JPG, JPEG or GIF</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrshorturl [link]</td>
+            <td>shortens a long link</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrreport</td>
+            <td>users can send a bug report to the bot dev</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrsuggest</td>
+            <td>
+              users can send suggestions to the bot dev or ask for new features
+            </td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrsinvite</td>
+            <td>
+              generates an invite link and qr code for you're server/guild
+            </td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrbinvite</td>
+            <td>generates an invite link and qr code for this bot</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrsupport</td>
+            <td>
+              generates an invite link and qr code the bots official support
+              server
+            </td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrvote</td>
+            <td>you can suppot this bot by voting for it</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrnews</td>
+            <td>tells you the latest news and updated features for this bot</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrhelp</td>
+            <td>shows you a list of all the commands</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrhelp [command]</td>
+            <td>shows you info about command and how to use it</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrstats</td>
+            <td>
+              sends basic information about the bot, uptime, users, servers,
+              version etc
+            </td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrping</td>
+            <td>shows you the Bot and API ping</td>
+            <td>[none]</td>
+          </tr>
+          <tr>
+            <td>qrreload [command]</td>
+            <td>reloads specified command</td>
+            <td>[Bot Owner]</td>
+          </tr>
+          <tr>
+            <td>qreval [code]</td>
+            <td>command for testing code</td>
+            <td>[Bot Owner]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
