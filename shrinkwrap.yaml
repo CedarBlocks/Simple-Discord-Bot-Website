@@ -1,5 +1,7 @@
 dependencies:
+  body-parser: 1.19.0
   express: 4.17.1
+  morgan: 1.10.0
 packages:
   /accepts/1.3.7:
     dependencies:
@@ -14,6 +16,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
+  /basic-auth/2.0.1:
+    dependencies:
+      safe-buffer: 5.1.2
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==
   /body-parser/1.19.0:
     dependencies:
       bytes: 3.1.0
@@ -73,6 +83,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
+  /depd/2.0.0:
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
   /destroy/1.0.4:
     dev: false
     resolution:
@@ -243,6 +259,18 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
+  /morgan/1.10.0:
+    dependencies:
+      basic-auth: 2.0.1
+      debug: 2.6.9
+      depd: 2.0.0
+      on-finished: 2.3.0
+      on-headers: 1.0.2
+    dev: false
+    engines:
+      node: '>= 0.8.0'
+    resolution:
+      integrity: sha512-AbegBVI4sh6El+1gNwvD5YIck7nSA36weD7xvIxG4in80j/UoK8AEGaWnnz8v1GxonMCltmlNs5ZKbGvl9b1XQ==
   /ms/2.0.0:
     dev: false
     resolution:
@@ -265,6 +293,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
+  /on-headers/1.0.2:
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==
   /parseurl/1.3.3:
     dev: false
     engines:
@@ -393,4 +427,6 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  body-parser: ^1.19.0
   express: ^4.17.1
+  morgan: ^1.10.0
