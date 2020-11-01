@@ -1,3 +1,4 @@
+const config = require("./config.json");
 const morgan = require("morgan");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -22,20 +23,21 @@ app.get("/commands", function(req, res) {
 app.get("/livechat", function(req, res) {
   res.sendFile(__dirname + "/livechat.html");
 });
+app.get("/privacy", function(req, res) {
+  res.sendFile(__dirname + "/privacy.html");
+});
 
 app.get("/support", function(req, res) {
-  res.redirect("https://discord.gg/2YQ2ydr");
+  res.redirect(config.supportServer);
 });
 
 app.get("/invite", function(req, res) {
-  res.redirect(
-    "https://discordapp.com/oauth2/authorize?client_id=702935974308741140&scope=bot&permissions=52289"
-  );
+  res.redirect(config.botInvite);
 });
 
 app.post("/api/bot/commands", function(req, res) {
   console.log(req.body);
-  res.end('Successfully updated commands');
+  res.send("Successfully updated commands");
 });
 
 var listener = app.listen(process.env.PORT, function() {

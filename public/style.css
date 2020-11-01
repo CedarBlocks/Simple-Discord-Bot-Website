@@ -1,7 +1,5 @@
-/* CSS files add styling rules to your content */
 body {
-  background-image: radial-gradient(#23272A, #7289DA);
-  font-family: helvetica, arial, sans-serif;
+  background-image: radial-gradient(#0099ff, #0c1246);
   color: white;
   font-family: "Merriweather", serif;
   text-align: center;
@@ -76,7 +74,7 @@ p {
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #0077ee;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -121,4 +119,20 @@ p {
     display: block;
     text-align: left;
   }
+}
+
+.pp {
+  color: white;
+}
+
+a:link {
+  color: #0077ee;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
 }
