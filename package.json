@@ -1,9 +1,6 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "my-gomix-app",
-  "version": "0.0.1",
+  "name": "discord-bot-website",
+  "version": "0.0.3",
   "description": "Discord bot website",
   "main": "server.js",
   "scripts": {
@@ -20,11 +17,5 @@
   "repository": {
     "url": "https://github.com/JLDENSMORE/Simple-Discord-Bot-Website.git"
   },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "discord",
-    "express",
-    "bot"
-  ]
+  "license": "MIT"
 }
