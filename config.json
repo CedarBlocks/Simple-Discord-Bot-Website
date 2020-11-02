@@ -1,4 +1,5 @@
 {
   "supportServer": "https://discord.gg/2YQ2ydr",
-  "botInvite": "https://discordapp.com/oauth2/authorize?client_id=702935974308741140&scope=bot&permissions=52289"
+  "botInvite": "https://discordapp.com/oauth2/authorize?client_id=702935974308741140&scope=bot&permissions=52289",
+  "port": "666"
 }
