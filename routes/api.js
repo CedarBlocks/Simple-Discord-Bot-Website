@@ -8,15 +8,15 @@ router.use(function (req, res, next) {
 });
 
 router.route("/").get((req, res)=> {
-    res.send("<html><pre>/ip or / test you fool</pre></html>")
+    require("../api/index.js").run(req, res);
 })
 
-router.route("/ip").get((req, res) => {
-    require("../api/ip").run(req, res);
+router.route("/logo").get((req, res) => {
+    require("../api/logo.js").run(req, res);
 });
 
 router.route("/test").get((req, res) => {
-    require("../api/test").run(req, res);
+    require("../api/test.js").run(req, res);
 });
 
 

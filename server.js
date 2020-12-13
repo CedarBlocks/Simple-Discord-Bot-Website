@@ -50,7 +50,9 @@ app.get('*', function(req, res){
 
 app.use(function(err, req, res, next) {
   console.error('ERROR ', err.stack);
-  res.status(500).render('500.ejs');
+  res.status(500).render('500.ejs', {
+    error: err
+  });
 });
 
 var listener = app.listen(config.port || process.env.PORT, function () {
