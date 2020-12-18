@@ -5,7 +5,7 @@ module.exports = {
             version: "0.0.1",
             endpoints: {
                 "/api/logo": "Get the bots logo or avatar in various sizes.",
-                "/api/test": "Just a test"
+                "/api/status": "Returns the bots status"
             }
         });
     }

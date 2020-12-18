@@ -15,8 +15,8 @@ router.route("/logo").get((req, res) => {
     require("../api/logo.js").run(req, res);
 });
 
-router.route("/test").get((req, res) => {
-    require("../api/test.js").run(req, res);
+router.route("/status" || "/stats").get((req, res) => {
+    require("../api/status.js").run(req, res);
 });
 
 

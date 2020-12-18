@@ -1,5 +1,6 @@
 {
   "supportServer": "https://discord.gg/2YQ2ydr",
   "botInvite": "https://discordapp.com/oauth2/authorize?client_id=702935974308741140&scope=bot&permissions=52289",
-  "port": "666"
+  "botServer": "http://206.221.176.133:19172",
+  "port": "3000"
 }
