@@ -48,10 +48,12 @@ module.exports = {
       const json = await response.json();
       
       // Extract server count from various possible field names
-      const serverCount = json.serverCount || json.guilds || json.servers || json.guildCount || botStatsCache.serverCount || 0;
+      // Use nullish coalescing (??) to preserve 0 values, only fallback for null/undefined
+      const serverCount = json.serverCount ?? json.guilds ?? json.servers ?? json.guildCount ?? botStatsCache.serverCount ?? 0;
       
       // Extract ping from various possible field names
-      const ping = json.ping || json.latency || botStatsCache.ping || null;
+      // Use nullish coalescing (??) to preserve 0 values, only fallback for null/undefined
+      const ping = json.ping ?? json.latency ?? botStatsCache.ping ?? null;
       
       // Update cache with fresh data
       botStatsCache = {
@@ -98,9 +100,11 @@ module.exports = {
   // Method to update stats from bot POST requests
   updateStats: function(serverCount, ping) {
     botStatsCache = {
-      serverCount: serverCount || 0,
+      // Use nullish coalescing (??) to preserve 0 values - only use default if undefined/null
+      serverCount: serverCount ?? botStatsCache.serverCount ?? 0,
       status: 'online',
-      ping: ping || botStatsCache.ping,
+      // Use nullish coalescing (??) to preserve 0 values - only use cached if undefined/null
+      ping: ping ?? botStatsCache.ping,
       lastUpdate: new Date().toISOString()
     };
   },
