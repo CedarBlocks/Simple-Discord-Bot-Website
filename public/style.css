@@ -136,3 +136,126 @@ a:hover {
   background-color: transparent;
   text-decoration: underline;
 }
+
+/* Stats Container */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background-color: #23272A;
+  border: 2px solid #7289DA;
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 200px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(114, 137, 218, 0.3);
+}
+
+.stat-icon {
+  font-size: 2.5em;
+  color: #7289DA;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  color: #99AAB5;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  color: white;
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: "Merriweather", serif;
+}
+
+/* Status Indicator */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+.status-online {
+  background-color: #43b581;
+  box-shadow: 0 0 8px rgba(67, 181, 129, 0.6);
+}
+
+.status-offline {
+  background-color: #f04747;
+  box-shadow: 0 0 8px rgba(240, 71, 71, 0.6);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Widget Container */
+.widget-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.topgg-widget {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.topgg-widget:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .stats-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .stat-card {
+    min-width: auto;
+    justify-content: center;
+  }
+  
+  .stat-icon {
+    font-size: 2em;
+  }
+  
+  .stat-value {
+    font-size: 1.5em;
+  }
+}

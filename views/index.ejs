@@ -26,14 +26,81 @@
 <body>
   <%- include ("./partials/navbar.ejs") %>
   <h1 id="title">QR It</h1>
+  
   <div id="main">
-    <a href="https://top.gg/bot/702935974308741140">
-      <img src="https://top.gg/api/widget/702935974308741140.svg" alt="QR It" width="auto" height="auto" />
-    </a>
-    <p>
-      This site is a work in progress, thank you for your understanding. 😊
-    </p>
+    <!-- Bot Stats Section -->
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fa fa-server" aria-hidden="true"></i>
+        </div>
+        <div class="stat-content">
+          <div class="stat-label">Servers</div>
+          <div class="stat-value" id="serverCount">Loading...</div>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fa fa-circle" aria-hidden="true"></i>
+        </div>
+        <div class="stat-content">
+          <div class="stat-label">Status</div>
+          <div class="stat-value">
+            <span id="botStatus" class="status-indicator">
+              <span class="status-dot" id="statusDot"></span>
+              <span id="statusText">Loading...</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top.gg Widget -->
+    <div class="widget-container">
+      <a href="https://top.gg/bot/702935974308741140" target="_blank">
+        <img src="https://top.gg/api/widget/702935974308741140.svg" alt="QR It on Top.gg" class="topgg-widget" />
+      </a>
+    </div>
   </div>
+
+  <script>
+    // Fetch bot stats from API
+    async function fetchBotStats() {
+      try {
+        const response = await fetch('/api/status');
+        const data = await response.json();
+        
+        // Update server count
+        const serverCount = data.serverCount || 0;
+        document.getElementById('serverCount').textContent = serverCount.toLocaleString();
+        
+        // Update status
+        const status = data.status || 'offline';
+        const statusText = document.getElementById('statusText');
+        const statusDot = document.getElementById('statusDot');
+        
+        if (status === 'online') {
+          statusText.textContent = 'Online';
+          statusDot.className = 'status-dot status-online';
+        } else {
+          statusText.textContent = 'Offline';
+          statusDot.className = 'status-dot status-offline';
+        }
+      } catch (error) {
+        console.error('Error fetching bot stats:', error);
+        document.getElementById('serverCount').textContent = 'N/A';
+        document.getElementById('statusText').textContent = 'Unknown';
+        document.getElementById('statusDot').className = 'status-dot status-offline';
+      }
+    }
+
+    // Fetch stats on page load
+    fetchBotStats();
+    
+    // Refresh stats every 10 minutes
+    setInterval(fetchBotStats, 10 * 60 * 1000);
+  </script>
 </body>
 
 </html>
