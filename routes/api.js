@@ -1,27 +1,59 @@
 const express = require('express');
-let router = express.Router();
-router.use(require("express").json());
+const router = express.Router();
 
-router.use(function (req, res, next) {
-    console.log(req.url, "@", Date.now());
-    next();
+// Request logging middleware
+router.use((req, res, next) => {
+  console.log(`${req.method} ${req.url} @ ${new Date().toISOString()}`);
+  next();
 });
 
-router.route("/").get((req, res)=> {
-    require("../api/index.js").run(req, res);
-})
-
-router.route("/logo").get((req, res) => {
-    require("../api/logo.js").run(req, res);
+// API routes with error handling
+router.get('/', async (req, res) => {
+  try {
+    await require('../api/index.js').run(req, res);
+  } catch (error) {
+    console.error('Error in API index route:', error);
+    res.status(500).json({
+      error: 'Internal server error',
+      message: 'An error occurred while processing your request'
+    });
+  }
 });
 
-router.route("/status").get((req, res) => {
-    require("../api/status.js").run(req, res);
+router.get('/logo', async (req, res) => {
+  try {
+    await require('../api/logo.js').run(req, res);
+  } catch (error) {
+    console.error('Error in API logo route:', error);
+    res.status(500).json({
+      error: 'Internal server error',
+      message: 'An error occurred while processing your request'
+    });
+  }
 });
 
-router.route("/stats").get((req, res) => {
-    require("../api/status.js").run(req, res);
+router.get('/status', async (req, res) => {
+  try {
+    await require('../api/status.js').run(req, res);
+  } catch (error) {
+    console.error('Error in API status route:', error);
+    res.status(500).json({
+      error: 'Internal server error',
+      message: 'An error occurred while processing your request'
+    });
+  }
 });
 
+router.get('/stats', async (req, res) => {
+  try {
+    await require('../api/status.js').run(req, res);
+  } catch (error) {
+    console.error('Error in API stats route:', error);
+    res.status(500).json({
+      error: 'Internal server error',
+      message: 'An error occurred while processing your request'
+    });
+  }
+});
 
 module.exports = router;
